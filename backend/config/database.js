@@ -53,7 +53,8 @@ const connectMySQL = async () => {
   try {
     await sequelize.authenticate();
     console.log('✓ MySQL conectado exitosamente');
-    await sequelize.sync({ alter: false });
+    // alter: true creará las tablas si no existen y las actualizará si cambian
+    await sequelize.sync({ alter: true });
     console.log('✓ Modelos MySQL sincronizados');
   } catch (error) {
     console.error('✗ Error al conectar MySQL:', error.message);
