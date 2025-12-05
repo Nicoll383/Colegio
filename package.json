@@ -1,0 +1,22 @@
+{
+  "name": "sistema-matriculas-escolar",
+  "version": "1.0.0",
+  "description": "Sistema completo de gestión de matrículas escolares",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "setup": "npm run install-all && npm run seed"
+  },
+  "keywords": ["matriculas", "escolar", "educacion", "gestion"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
